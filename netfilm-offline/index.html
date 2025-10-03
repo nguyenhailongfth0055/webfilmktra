@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NetFilm - Offline</title>
+<style>
+body{font-family: Arial, Helvetica, sans-serif;background:#f8fafc;color:#111;margin:0}
+.header{background:#fff;padding:18px 24px;box-shadow:0 1px 3px rgba(0,0,0,0.06);display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .badge{width:40px;height:40px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold}
+.container{max-width:1100px;margin:28px auto;padding:0 20px;display:grid;grid-template-columns:260px 1fr;gap:20px}
+.card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 1px 4px rgba(2,6,23,0.06)}
+.genre-list label{display:block;margin-bottom:8px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.movie-item{border-radius:10px;overflow:hidden;border:1px solid #eee;cursor:pointer;background:#fff}
+.movie-item img{width:100%;height:220px;object-fit:cover;display:block}
+.movie-info{padding:10px}
+.detail-iframe{width:100%;height:320px;border:0;border-radius:8px;overflow:hidden;background:#000}
+.footer{max-width:1100px;margin:30px auto;padding:12px 20px;color:#666;font-size:14px}
+.search-input{padding:8px 12px;border-radius:999px;border:1px solid #ddd;width:220px}
+.meta{font-size:13px;color:#666;margin-top:8px}
+.rating{color:#d97706;font-weight:bold}
+@media(max-width:900px){.container{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><div class="badge">NF</div><h1 style="margin:0;font-size:18px">NetFilm (Offline)</h1></div>
+  <div>
+    <input id="search" class="search-input" placeholder="Search movies or cast...">
+  </div>
+</header>
+
+<main class="container">
+  <aside>
+    <div class="card">
+      <h3 style="margin-top:0">Genres</h3>
+      <div id="genres" class="genre-list"></div>
+      <hr style="margin:12px 0">
+      <button onclick="resetFilters()" style="background:none;border:none;color:#2563eb;cursor:pointer">Reset filters</button>
+    </div>
+  </aside>
+
+  <section>
+    <div id="detail" class="card"></div>
+    <div class="card" style="margin-top:16px">
+      <h3 style="margin-top:0">Browse movies</h3>
+      <div id="grid" class="grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">© 2025 NetFilm — Offline demo site with 20 movies.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
